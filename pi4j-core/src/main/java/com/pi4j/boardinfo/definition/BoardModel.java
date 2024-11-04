@@ -17,14 +17,15 @@ import static com.pi4j.boardinfo.definition.BoardType.*;
  *
  * <ul>
  *      <li>Board codes: <a href="https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#new-style-revision-codes-in-use">raspberrypi.com/documentation/computers/raspberry-pi.html#new-style-revision-codes-in-use</a></li>
- *      <li><a href="https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications">en.wikipedia.org/wiki/Raspberry_Pi</a></li>
+ *      <li>Old-style: <a href="https://github.com/raspberrypi/documentation/blob/develop/documentation/asciidoc/computers/raspberry-pi/revision-codes.adoc">github.com/raspberrypi/documentation/blob/develop/documentation/asciidoc/computers/raspberry-pi/revision-codes.adoc</a></li>
+ *      </li><li><a href="https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications">en.wikipedia.org/wiki/Raspberry_Pi</a></li>
  *      <li><a href="https://oastic.com/posts/how-to-know-which-raspberry-do-you-have/">oastic.com/posts/how-to-know-which-raspberry-do-you-have</a></li>
  *      <li><a href="https://www.raspberrypi-spy.co.uk/2012/09/checking-your-raspberry-pi-board-version/">raspberrypi-spy.co.uk/2012/09/checking-your-raspberry-pi-board-version/</a></li>
  * </ul>
  */
 public enum BoardModel {
     MODEL_1_A("Raspberry Pi 1 Model A", SINGLE_BOARD_COMPUTER,
-        new ArrayList<>(),
+        Arrays.asList("0007", "0008", "0009"),
         PiModel.MODEL_A,
         HeaderVersion.TYPE_1,
         LocalDate.of(2013, 2, 1),
@@ -33,7 +34,7 @@ public enum BoardModel {
         Collections.singletonList(700),
         Collections.singletonList(256 * 1024)),
     MODEL_1_A_PLUS("Raspberry Pi 1 Model A+", SINGLE_BOARD_COMPUTER,
-        Collections.singletonList("900021"),
+        Arrays.asList("0012", "0015", "900021"),
         PiModel.MODEL_A,
         HeaderVersion.TYPE_1,
         LocalDate.of(2014, 11, 1),
@@ -52,7 +53,7 @@ public enum BoardModel {
         Collections.singletonList(1400),
         Collections.singletonList(512 * 1024)),
     MODEL_1_B("Raspberry Pi 1 Model B", SINGLE_BOARD_COMPUTER,
-        new ArrayList<>(),
+        Arrays.asList("0002", "0003", "0004", "0005", "0006", "000d", "000e", "000f"),
         PiModel.MODEL_B,
         HeaderVersion.TYPE_1,
         LocalDate.of(2012, 4, 1),
@@ -62,7 +63,7 @@ public enum BoardModel {
         Arrays.asList(256 * 1024, 512 * 1024),
         Collections.singletonList("Amount of memory changed to 512Mb on 20121015")),
     MODEL_1_B_PLUS("Raspberry Pi 1 Model B+", SINGLE_BOARD_COMPUTER,
-        Collections.singletonList("900032"),
+        Arrays.asList("0010", "0013", "900032"),
         PiModel.MODEL_B,
         HeaderVersion.TYPE_1,
         LocalDate.of(2014, 7, 1),
@@ -134,7 +135,7 @@ public enum BoardModel {
         Collections.singletonList(2400),
         Arrays.asList(2048 * 1024, 4096 * 1024, 8192 * 1024)),
     COMPUTE_1("Compute Module 1", STACK_ON_COMPUTER,
-        Collections.singletonList("900061"),
+        Arrays.asList("0011", "0014", "900061"),
         PiModel.COMPUTE,
         HeaderVersion.COMPUTE,
         LocalDate.of(2014, 4, 1),
