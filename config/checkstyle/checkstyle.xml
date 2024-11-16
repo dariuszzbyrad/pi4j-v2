@@ -5,6 +5,10 @@
 
 <module name="Checker">
     <module name="TreeWalker">
+        <module name="UnusedImports"/>
+        <module name="RedundantImport"/>
+        <module name="IllegalImport"/>
+
         <!-- Ignore missing field/variable comments -->
         <module name="JavadocVariable">
             <property name="severity" value="ignore"/>
