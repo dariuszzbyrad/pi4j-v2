@@ -32,6 +32,7 @@ import com.pi4j.provider.Provider;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -110,7 +111,7 @@ public class TestPlatform extends PlatformBase<TestPlatform> implements Platform
      */
     public void setProviders(String ... providerId){
         this.supportedProviderIds.clear();
-        this.supportedProviderIds.addAll(Arrays.asList(providerId));
+        this.supportedProviderIds.addAll(List.of(providerId));
     }
 
     /**

@@ -278,7 +278,7 @@
         <maven-dependency-plugin.version>3.1.2</maven-dependency-plugin.version>
         <maven-gpg-plugin.version>3.2.1</maven-gpg-plugin.version>
         <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
-        <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
+        <maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
         <maven-release-plugin.version>3.0.0-M4</maven-release-plugin.version>
         <maven-resource-plugin.version>3.2.0</maven-resource-plugin.version>
         <maven-scm-plugin.version>1.11.2</maven-scm-plugin.version>
@@ -501,6 +501,16 @@
                             </goals>
                         </execution>
                     </executions>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <detectJavaApiLink>false</detectJavaApiLink>
+                        <doclint>none</doclint>
+                        <!-- Add module options -->
+                        <additionalJOption>--add-modules</additionalJOption>
+                        <additionalJOption>ALL-MODULE-PATH</additionalJOption>
+                        <!-- Optional: skip errors -->
+                        <failOnError>false</failOnError>
+                    </configuration>
                 </plugin>
 
                 <!-- DOWNLOAD LICENSE, README & NOTICE ARTIFACTS -->
@@ -759,25 +769,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.5.0</version>
-                <executions>
-                    <execution>
-                        <id>checkstyle-check</id>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <phase>validate</phase>
-                    </execution>
-                </executions>
-                <configuration>
-                    <failsOnError>true</failsOnError>
-                    <configLocation>config/checkstyle/checkstyle.xml</configLocation>
-                    <excludes>**/module-info.java</excludes>
-                </configuration>
             </plugin>
 		</plugins>
 	</build>

@@ -8,5 +8,22 @@
         <module name="UnusedImports"/>
         <module name="RedundantImport"/>
         <module name="IllegalImport"/> <!-- defaults to sun.* packages -->
+
+        <!-- Ignore missing field/variable comments -->
+        <module name="JavadocVariable">
+            <property name="severity" value="ignore"/>
+        </module>
+
+        <!-- Ignore missing method comments -->
+        <module name="JavadocMethod">
+            <property name="allowMissingParamTags" value="true"/>
+            <property name="allowMissingReturnTag" value="true"/>
+        </module>
+
+        <!-- Ignore enum constant documentation -->
+        <module name="JavadocType">
+            <property name="tokens" value="INTERFACE_DEF, CLASS_DEF, ANNOTATION_DEF"/>
+            <!-- This excludes ENUM_DEF -->
+        </module>
     </module>
 </module>

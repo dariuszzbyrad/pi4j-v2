@@ -92,7 +92,7 @@ public abstract class DigitalBase<DIGITAL_TYPE extends Digital<DIGITAL_TYPE, CON
     public DIGITAL_TYPE bind(DigitalBinding ... binding) {
         return bindings.bind(binding);
 
-        //bindings.addAll(Arrays.asList(binding));
+        //bindings.addAll(List.of(binding));
         //return (DIGITAL_TYPE)this;
     }
 
@@ -100,7 +100,7 @@ public abstract class DigitalBase<DIGITAL_TYPE extends Digital<DIGITAL_TYPE, CON
     @Override
     public DIGITAL_TYPE unbind(DigitalBinding ... binding) {
         return bindings.unbind(binding);
-        //bindings.removeAll(Arrays.asList(binding));
+        //bindings.removeAll(List.of(binding));
         //return (DIGITAL_TYPE)this;
     }
 
