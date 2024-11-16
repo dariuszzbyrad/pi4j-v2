@@ -502,7 +502,7 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <source>11</source>    <!-- Adjust based on your Java version -->
+                        <source>${java.version}</source>
                         <detectJavaApiLink>false</detectJavaApiLink>
                         <doclint>none</doclint>
                         <!-- Add module options -->
