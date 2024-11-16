@@ -7,7 +7,7 @@
     <module name="TreeWalker">
         <module name="UnusedImports"/>
         <module name="RedundantImport"/>
-        <module name="IllegalImport"/>
+        <module name="IllegalImport"/> <!-- defaults to sun.* packages -->
 
         <!-- Ignore missing field/variable comments -->
         <module name="JavadocVariable">
