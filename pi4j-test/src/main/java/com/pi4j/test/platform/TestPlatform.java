@@ -32,6 +32,7 @@ import com.pi4j.provider.Provider;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
