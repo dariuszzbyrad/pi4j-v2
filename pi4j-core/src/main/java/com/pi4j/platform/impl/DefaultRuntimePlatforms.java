@@ -210,7 +210,7 @@ public class DefaultRuntimePlatforms implements RuntimePlatforms {
 
 
     private <T extends Platform> Platforms add(T ... platform) throws PlatformAlreadyExistsException, PlatformInitializeException {
-        return add(Arrays.asList(platform));
+        return add(List.of(platform));
     }
 
     private <T extends Platform > Platforms add(Collection<T> platform) throws PlatformAlreadyExistsException, PlatformInitializeException {

@@ -110,7 +110,7 @@ public class TestPlatform extends PlatformBase<TestPlatform> implements Platform
      */
     public void setProviders(String ... providerId){
         this.supportedProviderIds.clear();
-        this.supportedProviderIds.addAll(Arrays.asList(providerId));
+        this.supportedProviderIds.addAll(List.of(providerId));
     }
 
     /**

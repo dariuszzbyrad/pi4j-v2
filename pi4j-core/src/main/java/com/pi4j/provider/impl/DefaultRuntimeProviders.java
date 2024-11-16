@@ -229,7 +229,7 @@ public class DefaultRuntimeProviders implements RuntimeProviders {
     }
 
     private <T extends Provider> Providers add(T ... provider) throws ProviderInitializeException, ProviderAlreadyExistsException {
-        return add(Arrays.asList(provider));
+        return add(List.of(provider));
     }
 
     private <T extends Provider> Providers add(Collection<T> provider) throws ProviderAlreadyExistsException, ProviderInitializeException {
