@@ -62,7 +62,7 @@ public class BoardInfoHelper {
 
     /**
      * Flag indicating that the board is using the RP1 chip for GPIO.
-     * <a href="https://www.raspberrypi.com/documentation/microcontrollers/rp1.html">...</a>
+     * <a href="https://www.raspberrypi.com/documentation/microcontrollers/rp1.html">https://www.raspberrypi.com/documentation/microcontrollers/rp1.html</a>
      * @return
      */
     public static boolean usesRP1() {
