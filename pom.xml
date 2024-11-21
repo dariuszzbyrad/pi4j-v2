@@ -506,11 +506,9 @@
                         <source>${java.version}</source>
                         <detectJavaApiLink>false</detectJavaApiLink>
                         <doclint>none</doclint>
-                        <!-- Add module options -->
-                        <additionalJOption>--add-modules</additionalJOption>
-                        <additionalJOption>ALL-MODULE-PATH</additionalJOption>
                         <!-- Optional: skip errors -->
                         <failOnError>false</failOnError>
+                        <additionalOptions>-Xdoclint:none</additionalOptions>
                     </configuration>
                 </plugin>
 
