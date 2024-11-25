@@ -30,7 +30,7 @@ package com.pi4j.boardinfo.util;
  * These commands are typically used to gather system-related information
  * such as voltage, uptime, and temperature on Raspberry Pi or similar systems.
  */
-public interface CommandProperties {
+public interface Command {
 
     /**
      * Command to measure the core voltage of the system.

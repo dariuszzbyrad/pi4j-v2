@@ -38,9 +38,9 @@ import com.pi4j.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.pi4j.boardinfo.util.CommandProperties.CORE_VOLTAGE_COMMAND;
-import static com.pi4j.boardinfo.util.CommandProperties.TEMPERATURE_COMMAND;
-import static com.pi4j.boardinfo.util.CommandProperties.UPTIME_COMMAND;
+import static com.pi4j.boardinfo.util.Command.CORE_VOLTAGE_COMMAND;
+import static com.pi4j.boardinfo.util.Command.TEMPERATURE_COMMAND;
+import static com.pi4j.boardinfo.util.Command.UPTIME_COMMAND;
 import static com.pi4j.boardinfo.util.SystemProperties.ARCHITECTURE_DATA_MODEL;
 import static com.pi4j.boardinfo.util.SystemProperties.JAVA_RUNTIME_VERSION;
 import static com.pi4j.boardinfo.util.SystemProperties.JAVA_VENDOR;
