@@ -2,7 +2,7 @@ package com.pi4j.boardinfo.model;
 
 public class JvmMemory {
 
-    private static double mb = 1024.0 * 1024.0;
+    private static final double mb = 1024.0 * 1024.0;
 
     private final long total;
     private final long free;
