@@ -70,10 +70,11 @@ public class MemInfoReader {
         try (BufferedReader reader = new BufferedReader(new FileReader(memInfoFilePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                if (line.startsWith("MemTotal:")) {
-                    memTotalLine = line.trim();
-                    break;
+                if (!line.startsWith("MemTotal:")) {
+                    continue; // Skip lines that don't start with "MemTotal:"
                 }
+                memTotalLine = line.trim();
+                break; // No need to process further once "MemTotal:" is found
             }
         } catch (IOException ex) {
             errorMessage = "IOException: " + ex.getMessage();

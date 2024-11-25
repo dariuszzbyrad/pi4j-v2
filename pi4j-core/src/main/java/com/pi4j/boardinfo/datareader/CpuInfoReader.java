@@ -70,13 +70,14 @@ public class CpuInfoReader {
             String line;
             // Read file line by line to locate the "Revision" entry.
             while ((line = reader.readLine()) != null) {
-                if (line.startsWith("Revision")) {
-                    String[] parts = line.split(":");
-                    if (parts.length > 1) {
-                        outputMessage = parts[1].trim(); // Extract and trim the revision value.
-                    }
-                    break; // No need to process further once "Revision" is found.
+                if (!line.startsWith("Revision")) {
+                    continue; // Skip lines that do not start with "Revision"
                 }
+                String[] parts = line.split(":");
+                if (parts.length > 1) {
+                    outputMessage = parts[1].trim(); // Extract and trim the revision value.
+                }
+                break; // No need to process further once "Revision" is found.
             }
         } catch (IOException ex) {
             errorMessage = "IOException: " + ex.getMessage();
