@@ -70,17 +70,13 @@ public class CommandExecutor {
         ProcessBuilder builder = new ProcessBuilder(command.split(" "));
 
         try {
-            // Start the process
             Process process = builder.start();
 
-            // Read output and error streams
             outputMessage = readStream(process.getInputStream());
             errorMessage = readStream(process.getErrorStream());
 
-            // Wait for the process to complete or timeout
             finished = process.waitFor(COMMAND_TIMEOUT_SECONDS, TimeUnit.SECONDS);
 
-            // Ensure the process is terminated if not finished
             if (!finished) {
                 process.destroyForcibly();
                 errorMessage = "Process timeout after " + COMMAND_TIMEOUT_SECONDS + " seconds.";
@@ -95,7 +91,6 @@ public class CommandExecutor {
             logger.error("InterruptedException during command execution '{}': {}", command, ex.getMessage(), ex);
         }
 
-        // Log error and return failure result if necessary
         if (!finished || !errorMessage.isEmpty()) {
             logger.error("Failed to execute command '{}': {}", command, errorMessage);
             return failure(errorMessage);

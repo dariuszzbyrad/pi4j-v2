@@ -34,6 +34,7 @@ import com.pi4j.boardinfo.model.BoardReading;
 import com.pi4j.boardinfo.model.JavaInfo;
 import com.pi4j.boardinfo.model.JvmMemory;
 import com.pi4j.boardinfo.model.OperatingSystem;
+import com.pi4j.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -156,7 +157,7 @@ public class BoardInfoHelper {
     }
 
     /**
-     * Checks if the device uses the RP1 processor.
+     * Checks if the device uses the RP1 chip.
      *
      * @return {@code true} if the board is a Raspberry Pi Model 5B, otherwise {@code false}.
      */
@@ -202,7 +203,7 @@ public class BoardInfoHelper {
             return output.getOutputMessage();
         }
         logger.error("Could not get the board version code: {}", output.getErrorMessage());
-        return "";
+        return StringUtil.EMPTY;
     }
 
     /**

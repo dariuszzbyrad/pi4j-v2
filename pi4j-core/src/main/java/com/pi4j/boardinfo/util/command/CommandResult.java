@@ -25,6 +25,8 @@ package com.pi4j.boardinfo.util.command;
  * #L%
  */
 
+import com.pi4j.util.StringUtil;
+
 import java.util.Objects;
 import java.util.Optional;
 
@@ -39,14 +41,14 @@ public class CommandResult {
     /**
      * Constructor to create a new CommandResult.
      *
-     * @param success        Whether the command execution was successful.
-     * @param outputMessage  The standard output of the command.
-     * @param errorMessage   The error message if the command failed.
+     * @param success       Whether the command execution was successful.
+     * @param outputMessage The standard output of the command.
+     * @param errorMessage  The error message if the command failed.
      */
     private CommandResult(boolean success, String outputMessage, String errorMessage) {
         this.success = success;
-        this.outputMessage = Optional.ofNullable(outputMessage).orElse("");
-        this.errorMessage = Optional.ofNullable(errorMessage).orElse("");
+        this.outputMessage = Optional.ofNullable(outputMessage).orElse(StringUtil.EMPTY);
+        this.errorMessage = Optional.ofNullable(errorMessage).orElse(StringUtil.EMPTY);
     }
 
     /**
@@ -105,7 +107,7 @@ public class CommandResult {
     @Override
     public String toString() {
         return String.format("CommandResult{success=%b, outputMessage='%s', errorMessage='%s'}",
-            success, outputMessage, errorMessage);
+                success, outputMessage, errorMessage);
     }
 
     /**
@@ -120,8 +122,8 @@ public class CommandResult {
         if (o == null || getClass() != o.getClass()) return false;
         CommandResult that = (CommandResult) o;
         return success == that.success &&
-            Objects.equals(outputMessage, that.outputMessage) &&
-            Objects.equals(errorMessage, that.errorMessage);
+                Objects.equals(outputMessage, that.outputMessage) &&
+                Objects.equals(errorMessage, that.errorMessage);
     }
 
     /**

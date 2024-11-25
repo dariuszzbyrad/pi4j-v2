@@ -71,18 +71,16 @@ public class BoardCodeReader {
             StringBuilder content = new StringBuilder();
             String line;
 
-            // Read the entire content of the file line by line.
             while ((line = reader.readLine()) != null) {
                 content.append(line);
             }
 
-            outputMessage = content.toString().trim(); // Remove unnecessary whitespace.
+            outputMessage = content.toString().trim();
         } catch (IOException ex) {
             errorMessage = "IOException: " + ex.getMessage();
             logger.error("Failed to read the board model from '{}': {}", modelFilePath, errorMessage);
         }
 
-        // Return CommandResult based on success or failure
         if (!errorMessage.isEmpty()) {
             return failure(errorMessage);
         }

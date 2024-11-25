@@ -83,7 +83,6 @@ public class CpuInfoReader {
             logger.error("Failed to read the CPU revision from '{}': {}", cpuInfoFilePath, errorMessage);
         }
 
-        // Return CommandResult based on success or failure
         if (!errorMessage.isEmpty() || outputMessage.isEmpty()) {
             return failure(errorMessage.isEmpty() ? "CPU revision not found in file" : errorMessage);
         }

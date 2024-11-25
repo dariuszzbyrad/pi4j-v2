@@ -80,7 +80,6 @@ public class MemInfoReader {
             logger.error("Failed to read memory information from '{}': {}", memInfoFilePath, errorMessage);
         }
 
-        // Return CommandResult based on whether "MemTotal" was found
         if (!errorMessage.isEmpty()) {
             return failure(errorMessage);
         }
