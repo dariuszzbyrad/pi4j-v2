@@ -5,7 +5,7 @@ package com.pi4j.boardinfo.util;
  * **********************************************************************
  * ORGANIZATION  :  Pi4J
  * PROJECT       :  Pi4J :: LIBRARY  :: Java Library (CORE)
- * FILENAME      :  CommandProperties.java
+ * FILENAME      :  Command.java
  *
  * This file is part of the Pi4J project. More information about
  * this project can be found here:  https://pi4j.com/
