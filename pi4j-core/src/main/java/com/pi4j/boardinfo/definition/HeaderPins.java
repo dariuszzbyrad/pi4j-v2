@@ -17,7 +17,7 @@ public enum HeaderPins {
     COMPUTE_J6("Compute J6", getComputeJ6());
 
     private final String label;
-    private List<HeaderPin> pins;
+    private final List<HeaderPin> pins;
 
     HeaderPins(String label, List<HeaderPin> pins) {
         this.label = label;
